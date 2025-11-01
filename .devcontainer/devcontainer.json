@@ -1,5 +1,5 @@
 {
-    "name": "React + Vite + TypeScript Dev Container",
+    "name": "lud7n_dev",
     "image": "mcr.microsoft.com/devcontainers/javascript-node:20", // Node.js 20 ベース
     "runArgs": ["--name", "lud7n_dev"],
     // 開発用ツールを追加する（必要なら）
