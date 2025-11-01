@@ -1,0 +1,32 @@
+{
+    "name": "React + Vite + TypeScript Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:20", // Node.js 20 ベース
+    "runArgs": ["--name", "lud7n_dev"],
+    // 開発用ツールを追加する（必要なら）
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        }
+    },
+    // コンテナ作成後に実行するコマンド
+    "postCreateCommand": "npm install",
+    // VS Code 用の設定
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    },
+    // ポートフォワーディング（Vite のデフォルトポート 5173）
+    "forwardPorts": [
+        5173
+    ],
+    // Nodeモジュールをホストと分ける（キャッシュ汚染防止）
+    "mounts": [
+        "source=node_modules,target=/workspace/node_modules,type=volume"
+    ]
+}
